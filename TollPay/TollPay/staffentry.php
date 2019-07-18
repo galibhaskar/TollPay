@@ -1,0 +1,19 @@
+<?php
+    $dbhost='localhost:3307';
+    $dbuser='root';
+    $dbpass='';
+    $dbname='users';
+    $con=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+    header("location:home.php");
+    $s=$_POST['shift'];
+    $n=$_POST['name'];
+    $e=$_POST['email'];
+    $p=$_POST['phone'];
+    $d=$_POST['date'];
+    $st=$_POST['state'];
+    $sal=$_POST['sal'];
+    $bc=$_POST['bcode'];
+    $sql="INSERT INTO `staff`(`sid`, `name`, `email`, `phno`, `date`, `state`, `sal`, `bcode`, `shift`) VALUES (NULL,'$n','$e',$p,'$d','$st',$sal,$bc,'$s')";
+    $list=mysqli_query($con,$sql);
+    header("location:adminpage.php");
+?>
